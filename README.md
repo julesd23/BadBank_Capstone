@@ -4,7 +4,7 @@
 This is a simulation banking app that includes the ability to create an account, log in, deposit funds, withdraw funds, and logout. I built this as an exercise in Javascript and React, but also to grow my ability to implement databases, authentication, and authorization.
 
 ## Installation Guidelines
-- To get this project running locally start by forking the Url, and then use the git clone command within a terminal to pull the files to your machine.
+- To get this project running locally start by forking the project to your own GitHub account, and then use the git clone command within a terminal to pull the files to your machine.
 - Install all the necessary dependencies by subsequently running the npm install command.
 - Once that is finished running, get a Mongo database running by running the following command: docker run -p 27017:27017 --name badbank -d mongo.
 - Then the last step is to run the project by entering the command node index.js within the root directory, and with the browser of you choice navigate to http://localhost:3000/.
