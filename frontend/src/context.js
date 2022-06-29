@@ -1,7 +1,10 @@
-const Route       = ReactRouterDOM.Route;
-const Link        = ReactRouterDOM.Link;
-const HashRouter  = ReactRouterDOM.HashRouter;
-const UserContext = React.createContext(null);
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Route, Link, HashRouter} from 'react-router-dom'
+import React from 'react'
+
+// const UserContext = React.createContext(null);
+
+
 
 function Card(props){
   function classes(){
@@ -21,4 +24,10 @@ function Card(props){
       </div>
     </div>      
   );    
+}
+
+export {
+  Card,
+  // UserContext,
+  // UserBalance
 }

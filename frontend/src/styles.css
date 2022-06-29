@@ -1,0 +1,9 @@
+.react-nav {
+    text-align: right;
+    padding-right: 5%;
+}
+
+.user-nav {
+    position: absolute;
+    right: 150px;
+}
