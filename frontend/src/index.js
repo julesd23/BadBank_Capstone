@@ -18,6 +18,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector, useDispatch } from 'react-redux'
 
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 export const UserContext = createContext()
 
 
@@ -30,6 +32,7 @@ function Spa() {
   
   return (
     <>
+    <GoogleOAuthProvider clientId="810852788214-a5mjmk908heu421jco4us44f3g90vllv.apps.googleusercontent.com">
     <BrowserRouter>
       <div>
         <NavBar />
@@ -50,6 +53,7 @@ function Spa() {
       </div>
     </BrowserRouter>
     <ToastContainer />
+    </GoogleOAuthProvider>
     </>
   );
 }

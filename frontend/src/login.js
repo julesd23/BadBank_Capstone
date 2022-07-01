@@ -100,6 +100,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from './features/auth/authSlice'
+import { GoogleLogin } from '@react-oauth/google';
+import { decodeJwt } from 'jose'
 
 function Login() {
 
@@ -147,13 +149,6 @@ function Login() {
     }
     
     dispatch(login(userData))
-    
-    // if (isError) {
-    //   setError("Invalid credentials")
-    //   setTimeout(() => setError(''), 1500)
-    // } else {
-    //   alert("You are now logged in")
-    // }
   }
 
   return (
@@ -194,6 +189,31 @@ function Login() {
                       {error && <><div style={{ color: 'red' }}>{error}</div></>}
             <button type="submit" className="btn btn-dark">Submit</button>
           </div>
+          <GoogleLogin
+            onSuccess={ async credentialResponse => {
+
+              console.log(decodeJwt(credentialResponse.credential))
+              console.log(credentialResponse)
+              const decodedResponse = decodeJwt(credentialResponse.credential)
+              // console.log(credentialResponse);
+              // const jwt = credentialResponse.credential
+              // const { payload, protectedHeader } = await jose.jwtDecrypt(jwt, secretKey, {
+              //   issuer: 'urn:example:issuer',
+              //   audience: 'urn:example:audience',
+              // })
+              
+              // console.log(protectedHeader)
+              // console.log(payload)
+              const userData = {
+                email: decodedResponse.email,
+                password: credentialResponse.clientId
+              }
+              dispatch(login(userData))
+            }}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+          />
         </form>
       </section>
     </>

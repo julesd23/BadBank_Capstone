@@ -6,13 +6,15 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { FaUser } from 'react-icons/fa'
 import { register, reset } from './features/auth/authSlice'
-import EmailLogin from './components/EmailLogin'
-import EmailLogout from './components/EmailLogout'
-import { gapi } from 'gapi-script'
-
-const clientId = "810852788214-a5mjmk908heu421jco4us44f3g90vllv.apps.googleusercontent.com"
+// import GoogleLogin from 'react-google-login';
+import { GoogleLogin } from '@react-oauth/google';
+import { decodeJwt } from 'jose'
 
 function Register() {
+
+
+  const clientId = process.env.CLIENT_ID
+  const clientSecret = process.env.CLIENT_SECRET
 
   const [error, setError] = useState('')
   const [show, setShow] = useState(true);
@@ -110,16 +112,16 @@ function Register() {
     }
   }
 
-  useEffect(() => {
-    function start() {
-      gapi.auth2.init({
-        clientId: clientId,
-        scope: ""
-      })
-    };
+  // const responseSuccessGoogle = (response) => {
+  //   console.log('SUCCESS', response)
+  // }
 
-    gapi.load('client:auth2', start)
-  })
+  // const responseErrorGoogle = (response) => {
+  //   console.log('FAILURE', response)
+  // }
+
+  const secretKey = process.env.CLIENT_SECRET
+
 
   return (
     <>
@@ -183,8 +185,41 @@ function Register() {
           {error && <><div style={{ color: 'red' }}>{error}</div><br></br></>}
           <div className="form-group">
             <button type="submit" className="btn btn-dark">Submit</button>
-            <EmailLogin/>
           </div>
+          {/* <GoogleLogin
+            clientId="810852788214-a5mjmk908heu421jco4us44f3g90vllv.apps.googleusercontent.com"
+            buttonText="Login with Google"
+            onSuccess={responseSuccessGoogle}
+            onFailure={responseErrorGoogle}
+            cookiePolicy={'single_host_origin'}
+          /> */}
+
+          <GoogleLogin
+            onSuccess={ async credentialResponse => {
+
+              console.log(decodeJwt(credentialResponse.credential))
+              console.log(credentialResponse)
+              const decodedResponse = decodeJwt(credentialResponse.credential)
+              // console.log(credentialResponse);
+              // const jwt = credentialResponse.credential
+              // const { payload, protectedHeader } = await jose.jwtDecrypt(jwt, secretKey, {
+              //   issuer: 'urn:example:issuer',
+              //   audience: 'urn:example:audience',
+              // })
+              
+              // console.log(protectedHeader)
+              // console.log(payload)
+              const userData = {
+                name: decodedResponse.name,
+                email: decodedResponse.email,
+                password: credentialResponse.clientId
+              }
+              dispatch(register(userData))
+            }}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+          />
         </form>
       </section>
     </>
