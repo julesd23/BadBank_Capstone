@@ -1,3 +1,4 @@
+import './styles.css'
 import { React, useState, createContext } from 'react'
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
@@ -17,7 +18,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector, useDispatch } from 'react-redux'
-
+import WorldClock from './components/worldClock';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 export const UserContext = createContext()
@@ -31,13 +32,13 @@ function Spa() {
 
   
   return (
-    <>
+    <div>
     <GoogleOAuthProvider clientId="810852788214-a5mjmk908heu421jco4us44f3g90vllv.apps.googleusercontent.com">
     <BrowserRouter>
       <div>
         <NavBar />
         <UserContext.Provider value={value} balance={balance} setBalance={setBalance}>
-          <div className="container" style={{ padding: "20px" }}>
+          <div className="home">
             <Routes>
               <Route path="/" exact element={<Home/>} />
               <Route path="/CreateAccount/" element={<Register/>} />
@@ -53,8 +54,9 @@ function Spa() {
       </div>
     </BrowserRouter>
     <ToastContainer />
+    <WorldClock></WorldClock>
     </GoogleOAuthProvider>
-    </>
+    </div>
   );
 }
 

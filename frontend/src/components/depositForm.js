@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../styles.css'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { newTransfer } from '../features/transfers/transferSlice'
@@ -35,9 +35,12 @@ function DepositForm() {
   return (
     <section className='form'>
       <form onSubmit={onSubmit}>
+        
         <div className='form-group'>
-          <label htmlFor='text'>Deposit Amount: </label>
+          <label className="amount" htmlFor='text'>Deposit Amount: </label>
+          <br></br>
           <input
+            className="input"
             type='text'
             name='text'
             id='text'
@@ -45,13 +48,12 @@ function DepositForm() {
             onChange={(e) => setText(e.target.value)}
           />
         </div>
-        {error && <><div style={{ color: 'red' }}>{error}</div><br></br></>}
-        <div className='form-group'>
-          <button className='btn btn-block' type='submit'>
+        
+          <button className='button3' type='submit'>
             Submit
           </button>
-        </div>
-        {success && <><div style={{ color: 'turquoise' }}>{success}</div><br></br></>}
+          {error && <><br></br><br></br><div style={{ color: 'red' }}>{error}</div></>}
+        {success && <><br></br><br></br><div style={{ color: 'turquoise' }}>{success}</div></>}
       </form>
     </section>
   )

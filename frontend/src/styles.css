@@ -1,9 +1,459 @@
 .react-nav {
-    text-align: right;
-    padding-right: 5%;
+  text-align: right;
+  padding-right: 5%;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .user-nav {
+    display: none;
+  }
+  .card {
+    width: 40vh;
+    position: center;
+    top: 0; right: 0; bottom: 0; left: -11vh;
+  }
+  .ticker-wrap {
+    bottom: 8rem;
+    margin-bottom: 20%;
+  }
+}
+.user-nav {
+  position: absolute;
+  right: 150px;
+}
+
+/* OLD STYLES */
+
+body {
+  /* background:url(http://thekitemap.com/images/feedback-img.jpg) no-repeat; */
+  background-size: cover;
+  height:100%;
+  width: 100%;
+  /* background:  url('./img/pexels-adrien-olichon-2387793.jpg') no-repeat; */
+  overflow: hidden;
+  background-size: 400%;
+  background-image: linear-gradient(#8b9da9, #fff6e4);
+  box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+}
+
+p {
+  text-align: center;
+}
+
+.card-header {
+  font-size: medium;
+  text-align: center;
+  margin-top: 2%;
+
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+  
+}
+
+h2 {
+  text-align: center;
+  vertical-align: center;
+  filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+header,
+.demo,
+.demo p {
+  margin: 4em 0;
+  text-align: center;
+}
+
+/**
+     * Tooltip Styles
+     */
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip below the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  transition: opacity 0s linear .2s;
+}
+
+#createStatus {
+  margin-top: 10%;
+  padding-bottom: 5%;
+}
+
+/* @media only screen and (max-width: 800px) {
+  .card-body {
+    width: 90%;
+  }
+} */
+
+.card {
+  color: white;
+  background-color: #6c757d !important;
+  border-radius: 12px !important;
+  box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25); 
+  margin-top: 4%;
+  margin-bottom: 3.5%;
+  margin-left: 30%;
+  margin-right: 30%;
+  right: 0.5%;
+  height: fit-content !important;
+  position: center;
+}
+
+img {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+}
+
+button {
+  -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  display: inline-block;
+  /* margin: 5px auto; */
+  max-width: 180px;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px 30px;
+  filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+}
+
+button.button2 {
+  color: rgba(30, 22, 54, 0.6);
+  box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+}
+
+button.button2:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: #242331 0 80px 0px 2px inset;
+}
+
+.button2 {
+  margin-right: 5%;
+  border-radius: 12px;
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex:  1 1 auto;
+  -webkit-flex:  1 1 auto;
+  -ms-flex:  1 1 auto;
+  flex:  1 1 auto;
+}
+
+button.button3 {
+  color: rgba(30, 22, 54, 0.6);
+  box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+}
+
+button.button3:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: #242331 0 80px 0px 2px inset;
+}
+
+.button3 {
+  margin-top: 3%;
+  margin-right: 5%;
+  border-radius: 12px;
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex:  1 1 auto;
+  -webkit-flex:  1 1 auto;
+  -ms-flex:  1 1 auto;
+  flex:  1 1 auto;
+}
+
+table {
+  margin-top: 5%;
+  border-radius: 12px !important;
+  width: 80% !important;
+  margin-left: 10%;
+  margin-right:10%;
+  box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25) !important; 
+}
+
+h5 {
+  text-align: center;
+  color: white;
+  padding: 2%;
+  filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+}
+
+input {
+  width: 100%;
+}
+
+section {
+  height: fit-content; 
+}
+
+.home {
+  width: 100%;
+  height: 100%;
+  display: contents;
+}
+
+.amount {
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+.balance {
+  text-align: center;
+  margin-bottom: 8%;
+}
+
+.allDataBalance {
+  text-align: center;
+  color: white;
+  filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+}
+
+.inside {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2%;
+}
+
+
+
+.history {
+  color: white;
+  margin-top: 5%;
+  position: relative;
+}
+
+label {
+  margin-top:5%;
+  margin-bottom:1%;
+}
+
+.title {
+  margin-top: 10%;
+  margin-bottom: 8%;
+}
+
+#root {
+  height: 110vh;
+}
+
+.navbar {
+  /* left: 5vh; */
+  padding-left: 2vh;
+  width: 107%;
 }
 
 .user-nav {
-    position: absolute;
-    right: 150px;
+  padding-right: -20vh;
 }
+
+.navbar-toggler {
+  position: absolute;
+  right:60px;
+  top: 5px;
+  border: 0;
+}
+
+/* TICKER CSS */
+
+/* .ticker {
+  display: flex;
+}
+
+.ticker_list {
+  display: flex;
+  margin-top: 20px;
+  animation: ticker 15s infinite linear;
+  
+}
+
+.ticker:hover {
+  animation-play-state: paused;
+}
+  
+.ticker_item {
+  margin-right: 800px;
+}
+  
+@keyframes ticker {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+} */
+
+/* Make it a marquee */
+/* .marquee {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+} */
+
+/* .marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: ticker 20s infinite linear;
+} */
+
+/* Make it move */
+/* @keyframes marquee {
+  100% {
+    transform: translateX(-100%)
+  }
+} */
+
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+.ticker-wrap {
+  
+  position: fixed;
+  bottom: -2rem;
+  width: 100%;
+  overflow: hidden;
+  height: 4rem;
+  background-color: #212529;
+  padding-left: 100%;
+  padding-bottom: 2%;
+  box-sizing: content-box;
+}
+.ticker-wrap .ticker {
+  display: inline-block;
+  height: 4rem;
+  line-height: 4rem;
+
+  white-space: nowrap;
+  padding-right: 100%;
+  box-sizing: content-box;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: ticker;
+  animation-name: ticker;
+  -webkit-animation-duration: 30s;
+  animation-duration: 30s;
+}
+.ticker-wrap .ticker-item {
+  display: inline-block;
+  padding: 0rem 6rem;
+  font-size: 1.5rem;
+  color: white;
+  
+}
+
+.ticker-wrap .ticker:hover {
+  animation-play-state: paused;
+}
+
+.balance-page {
+  margin-top: 20%;
+}
+
+.google-btn {
+  margin-top: 20vh !important;
+  border-radius: 12px;
+  display:inline-block;
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex:  1 1 auto;
+  -webkit-flex:  1 1 auto;
+  -ms-flex:  1 1 auto;
+  flex:  1 1 auto;
+}
+
+.flex {
+  margin-top: 4%;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+

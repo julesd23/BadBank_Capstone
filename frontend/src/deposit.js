@@ -47,16 +47,22 @@ function Deposit() {
 
 
   return (
-    <>
-      <section className="heading">
-        <h1>Welcome {user && user.name} </h1>
-        <p>Make a Deposit</p>
-      </section>
-      <DepositForm />
-      <div>
-        Your current balance is: {balance}
-      </div>
-    </>
+    <div>
+      <Card
+        txtcolor="black"
+        header={<p>Welcome {user.name} </p>}
+        body={
+          <div className="inside">
+            <section className="heading">
+              <h1 className="title" >Make a Deposit</h1>
+              <h2 className="balance">Your current balance is: {balance}</h2>
+            </section>
+            <DepositForm />
+
+          </div>
+        }
+      />
+    </div>
   )
 
 }

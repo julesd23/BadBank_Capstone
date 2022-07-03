@@ -1,14 +1,14 @@
 import React from 'react'
+import '../styles.css'
 
 function TransferItem({transfer}) {
   const type = transfer.text > 0 ? "Deposit" : "Withdraw";
   return (
-    <div className="transfer">
-      <div>
-      Type: {type} Received: {new Date(transfer.createdAt).toLocaleString('en-us')} 
-        <h2> Amount: ${transfer.text}</h2>
-      </div>
-    </div>
+    <tr className="transfer">
+      <td>{type}</td> 
+      <td>${transfer.text}</td>
+      <td>{new Date(transfer.createdAt).toLocaleString('en-us')} </td>
+    </tr>
   )
 }
 

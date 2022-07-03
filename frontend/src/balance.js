@@ -42,11 +42,11 @@ function Balance() {
   }, [transfers])
   
   return (
-    <>
+    <div>
       <section className="heading">
-        <h1>Welcome {user && user.name}, your current balance is: ${balance}</h1>
+        <h1 className="balance-page">Welcome {user && user.name}, your current balance is: ${balance}</h1>
       </section>
-    </>
+    </div>
   )
 
 }

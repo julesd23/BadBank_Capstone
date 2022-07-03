@@ -48,16 +48,19 @@ function Withdraw() {
 
 
   return (
-    <>
-      <section className="heading">
-        <h1>Welcome {user && user.name} </h1>
-        <p>Make a Withdraw</p>
-      </section>
-      <WithdrawForm />
-      <div>
-        Your current balance is: {balance}
-      </div>
-    </>
+    <Card
+      txtcolor="black"
+      header={<p>Welcome {user.name} </p>}
+      body={
+        <div className="inside">
+          <section className="heading">
+            <h1 className="title" >Make a Withdraw</h1>
+            <h2 className="balance">Your current balance is: {balance}</h2>
+          </section>
+          <WithdrawForm />
+        </div>
+      }
+    />
   )
 
 }

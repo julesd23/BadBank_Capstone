@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css'
 import { React, useEffect, useState, useContext, useMemo } from 'react'
 import { Card } from './context'
 
@@ -24,8 +25,8 @@ function AllData() {
   const value = useContext(UserContext);
   const { balance, setBalance } = value
 
-    useEffect(() => {
-    if(isError) {
+  useEffect(() => {
+    if (isError) {
       console.log(message)
     }
 
@@ -41,38 +42,43 @@ function AllData() {
   }, [user, navigate, isError, message, dispatch])
 
   const sum = useEffect(() => {
-    let balance = 0;  
+    let balance = 0;
     transfers.forEach(element => {
-    balance += element.text;
-    setBalance(balance)
-  });
+      balance += element.text;
+      setBalance(balance)
+    });
   }, [transfers])
 
 
-  return (
-        <>
-          <section className="heading">
-            <h1>Welcome {user && user.name} </h1>
-            <h2>Recent Transactions</h2>
-          </section>
+  return (<div>
+    <form className="table">
+      <section className="heading">
+        <h2 className="history">Transaction History</h2>
+      </section>
 
-          {/* <DepositForm /> */}
+      {/* <DepositForm /> */}
 
-          <section className="content">
-            {transfers.length > 0 ? (
-              <div className="transfers">
-                {transfers.map((transfer) => (
-                  <TransferItem key={transfer._id} transfer={transfer}></TransferItem>
-                ))}
-              </div>
-            ) : (
-              <h3>There are no transactions to display</h3>
-            )}
-          </section>
-          <div>
-          Your current balance is: ${balance}
-          </div>
-          </>
+      <table className="table table-striped table-dark">
+        <thead id="thread">
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        {transfers.length > 0 ? (
+          <tbody className="transfers">
+            {transfers.map((transfer) => (
+              <TransferItem key={transfer._id} transfer={transfer}></TransferItem>
+            ))}
+          </tbody>
+        ) : (
+          <h3>There are no transactions to display</h3>
+        )}
+      </table>
+      <div className="allDataBalance">Your current balance is: ${balance}</div>
+    </form>
+  </div>
   )
 
 }
