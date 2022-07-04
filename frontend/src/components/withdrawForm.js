@@ -1,5 +1,4 @@
 import { React, useContext, useEffect } from 'react'
-
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { newTransfer } from '../features/transfers/transferSlice'
@@ -26,7 +25,6 @@ function WithdrawForm() {
             setBalance(balance)
         });
     }, [transfers])
-
 
     const onSubmit = (e) => {
         e.preventDefault()

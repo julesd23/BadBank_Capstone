@@ -5,14 +5,10 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { register, reset } from './features/auth/authSlice'
-// import GoogleLogin from 'react-google-login';
 import { GoogleLogin } from '@react-oauth/google';
 import { decodeJwt } from 'jose'
 
 function Register() {
-
-
-
 
   const [error, setError] = useState('')
 
@@ -84,15 +80,6 @@ function Register() {
     }
   }
 
-  // const responseSuccessGoogle = (response) => {
-  //   console.log('SUCCESS', response)
-  // }
-
-  // const responseErrorGoogle = (response) => {
-  //   console.log('FAILURE', response)
-  // }
-
-
   return (
     <Card
       bgcolor="secondary"
@@ -155,11 +142,7 @@ function Register() {
               <div className="flex">
                 <button type="submit" className="button2">Submit</button>
                 <GoogleLogin
-
                   onSuccess={async credentialResponse => {
-
-                    // console.log(decodeJwt(credentialResponse.credential))
-                    // console.log(credentialResponse)
                     const decodedResponse = decodeJwt(credentialResponse.credential)
                     const userData = {
                       name: decodedResponse.name,

@@ -3,10 +3,6 @@ import './styles.css'
 import {Route, Link, HashRouter} from 'react-router-dom'
 import React from 'react'
 
-// const UserContext = React.createContext(null);
-
-
-
 function Card(props){
   // function classes(){
   //   const bg  = props.bgcolor ? ' bg-' + props.bgcolor : ' ';

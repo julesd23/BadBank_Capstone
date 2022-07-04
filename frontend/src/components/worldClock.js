@@ -56,45 +56,17 @@ function WorldClock() {
         }, 1000)
     })
 
-
-
     return (
-
-
-                // <div className="ticker">
-                //     <div className="ticker_list">
-                //     <div className="ticker_item">New York: 
-                //     <div >{newYorkState}</div>
-                //     </div>
-                //     <div className="ticker_item" >London: 
-                //     <div >{london}</div>
-                //     </div>
-                //     <div className="ticker_item">Rome: 
-                //     <div >{rome}</div>
-                //     </div>
-                //     <div className="ticker_item">Bangkok: 
-                //     <div >{bangkok}</div>
-                //     </div>
-                //     <div className="ticker_item">Taiwan: 
-                //     <div >{taiwan}</div>
-                //     </div>
-                //     <div className="ticker_item">Sydney: 
-                //     <div >{sydney}</div>
-                //     </div>
-                //     </div>
-                // </div>
-                
-<div className="ticker-wrap">
-  <div className="ticker">
-    <div className="ticker-item">New York: <span>{newYorkState}</span></div>
-    <div className="ticker-item">London: <span>{london}</span></div>
-    <div className="ticker-item">Rome: <span>{rome}</span></div>
-    <div className="ticker-item">Bangkok: <span>{bangkok}</span></div>
-    <div className="ticker-item">Taiwan: <span>{taiwan}</span></div>
-    <div className="ticker-item">Sydney: <span>{sydney}</span></div>
-  </div>
-</div>
-
+        <div className="ticker-wrap">
+            <div className="ticker">
+                <div className="ticker-item">New York: <span>{newYorkState}</span></div>
+                <div className="ticker-item">London: <span>{london}</span></div>
+                <div className="ticker-item">Rome: <span>{rome}</span></div>
+                <div className="ticker-item">Bangkok: <span>{bangkok}</span></div>
+                <div className="ticker-item">Taiwan: <span>{taiwan}</span></div>
+                <div className="ticker-item">Sydney: <span>{sydney}</span></div>
+            </div>
+        </div>
     )
 }
 

@@ -18,7 +18,6 @@ function NavBar() {
     navigate('/')
   }
 
-
   return (
     <Navbar collapseOnSelect expand="md" className="navbar navbar-collapse navbar-dark bg-dark" fixed="right" >
       <a className="navbar-brand" href="/">BadBank</a>

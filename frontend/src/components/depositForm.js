@@ -26,8 +26,6 @@ function DepositForm() {
     })
 
     let balance = Number(total) + Number(text);
-
-    console.log(balance)
     
     if(isNaN(text)) {
       setError("input must be a number.")
