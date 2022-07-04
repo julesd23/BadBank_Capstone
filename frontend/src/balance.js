@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import { getTransfers, reset } from './features/transfers/transferSlice'
 
 
-import { UserContext } from './index'
+import { UserContext } from '.'
 
 function Balance() {
 

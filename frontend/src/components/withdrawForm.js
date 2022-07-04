@@ -3,7 +3,7 @@ import { React, useContext, useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { newTransfer } from '../features/transfers/transferSlice'
-import { UserContext } from '../index'
+import { UserContext } from '..'
 
 function WithdrawForm() {
 

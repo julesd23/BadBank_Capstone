@@ -10,7 +10,7 @@ import initialState from './features/transfers/transferSlice'
 import DepositForm from './components/depositForm'
 import TransferItem from './components/transferItem'
 
-import { UserContext } from './index'
+import { UserContext } from '.'
 
 function Deposit() {
 

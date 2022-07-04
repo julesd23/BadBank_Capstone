@@ -13,7 +13,7 @@ function Home() {
       title="Welcome to the bank"
       text="You can move around using the navigation bar."
       body={(<>
-        <img src={Bank} className="img-fluid" alt="Responsive image" />
+        <img src={Bank} className="img-fluid" />
       </>
       )}
     />
