@@ -1,14 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css'
-import { React, useEffect, useState, useContext, useMemo } from 'react'
-import { Card } from './context'
-
+import { React, useEffect, useState, useContext } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-
-import { newTransfer, getTransfers, reset } from './features/transfers/transferSlice'
-import initialState from './features/transfers/transferSlice'
-import DepositForm from './components/depositForm'
+import { useNavigate } from 'react-router-dom'
+import { getTransfers, reset } from './features/transfers/transferSlice'
 import TransferItem from './components/transferItem'
 import { UserContext } from '.'
 
@@ -18,9 +13,6 @@ function AllData() {
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
   const { transfers, isLoading, isError, message } = useSelector((state) => state.transfers)
-
-  // const [show, setShow]     = React.useState(true);
-  // const [status, setStatus] = React.useState('');  
 
   const value = useContext(UserContext);
   const { balance, setBalance } = value
@@ -49,14 +41,11 @@ function AllData() {
     });
   }, [transfers])
 
-
   return (<div>
     <form className="table">
       <section className="heading">
         <h2 className="history">Transaction History</h2>
       </section>
-
-      {/* <DepositForm /> */}
 
       <table className="table table-striped table-dark">
         <thead id="thread">
@@ -73,7 +62,7 @@ function AllData() {
             ))}
           </tbody>
         ) : (
-          <h3>There are no transactions to display</h3>
+          <th scope="col">There are no transactions to display</th>
         )}
       </table>
       <div className="allDataBalance">Your current balance is: ${balance}</div>

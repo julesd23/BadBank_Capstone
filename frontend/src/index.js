@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from './navbar'
-// import { UserContext } from './context';
 import Home from './home'
 import Register from './Register';
 import Login from './login'
@@ -23,14 +22,11 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 
 export const UserContext = createContext()
 
-
-
 function Spa() {
 
   const [balance, setBalance] = useState(0)
   const value = {balance, setBalance}
 
-  
   return (
     <div>
     <GoogleOAuthProvider clientId="810852788214-a5mjmk908heu421jco4us44f3g90vllv.apps.googleusercontent.com">
@@ -45,7 +41,6 @@ function Spa() {
               <Route path="/login/" element={<Login/>} />
               <Route path="/deposit/" element={<Deposit/>} />
               <Route path="/withdraw/" element={<Withdraw/>} />
-              {/* <Route path="/transactions/" element={Transactions} /> */}
               <Route path="/balance/" element={<Balance/>} />
               <Route path="/alldata/" element={<AllData/>} />
             </Routes>

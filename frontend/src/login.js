@@ -2,7 +2,6 @@ import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { React, useState, useEffect } from 'react'
 import { Card, UserContext } from './context'
-import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -37,7 +36,6 @@ function Login() {
       navigate('/')
     }
     dispatch(reset())
-
   }, [user, isError, isSuccess, message, navigate, dispatch])
 
   const onChange = (e) => {
@@ -54,7 +52,6 @@ function Login() {
       email,
       password
     }
-
     dispatch(login(userData))
   }
 
@@ -68,7 +65,6 @@ function Login() {
             <div className="card-header">
               <h2>Login</h2>
             </div>
-
             <section className="card-body">
               <form onSubmit={onSubmit}>
                 <div className="form-group">
@@ -100,8 +96,6 @@ function Login() {
                   <button type="submit" className="button2">Submit</button>
                   <GoogleLogin
                     onSuccess={async credentialResponse => {
-                      // console.log(decodeJwt(credentialResponse.credential))
-                      // console.log(credentialResponse)
                       const decodedResponse = decodeJwt(credentialResponse.credential)
                       const userData = {
                         email: decodedResponse.email,

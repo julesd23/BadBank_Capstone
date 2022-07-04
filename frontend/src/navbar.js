@@ -1,24 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import { useEffect } from 'react'
 import { Nav, Navbar } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout, reset } from './features/auth/authSlice'
 
-
 function NavBar() {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
-
-  // useEffect(() => {
-  //   if(!user) {
-  //     navigate('/login')
-  //   }
-  // }, [user, navigate])
 
   const onLogout = () => {
     dispatch(logout())

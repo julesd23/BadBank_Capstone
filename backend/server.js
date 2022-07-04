@@ -12,7 +12,6 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
-
 app.use('/api/transfers', require('./routes/transferRoutes'))
 app.use('/api/users', require('./routes/userRoutes'))
 
@@ -25,5 +24,3 @@ if (process.env.NODE_ENV === 'production') {
 app.listen(process.env.PORT, () => 
 console.log(`server started on port ${port}`)
 )
-
-

@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const API_URL = '/api/transfers/'
 
-// Create new goal
+// Create new transfer
 const newTransfer = async (transferData, token) => {
     const config = {
         headers: {
@@ -16,7 +16,7 @@ const newTransfer = async (transferData, token) => {
     return response.data
 }
 
-// Get user goals
+// Get user tranfers
 const getTransfers = async (token) => {
     const config = {
         headers: {

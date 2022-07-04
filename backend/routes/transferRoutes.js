@@ -7,6 +7,6 @@ router.route('/').get(protect, getTransfers).post(protect, setTransfer)
 
 router.route('/:id').delete(protect, deleteTransfer)
 
-// router.route('/:id').delete(protect, deleteTransfer).put(protect, updateGoal)
+// router.route('/:id').delete(protect, deleteTransfer).put(protect, update)
 
 module.exports = router 

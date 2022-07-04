@@ -11,6 +11,11 @@ const transferSchema = mongoose.Schema(
             type: Number,
             required: [true, 'Please add a value']
         },
+        balance: {
+            type: Number,
+            required: [true, 'Please add a balance'],
+            default: 0,
+        }
     },
     {
         timestamps: true,

@@ -31,6 +31,15 @@ function WithdrawForm() {
     const onSubmit = (e) => {
         e.preventDefault()
 
+        let total = 0;
+
+        let sum = transfers.forEach(element => {
+          total += element.text;
+          return total;
+        })
+    
+        let balance = Number(total) - Number(text);
+
         if (isNaN(text)) {
             setError("input must be a number.")
             setTimeout(() => setError(''), 1500)
@@ -41,7 +50,10 @@ function WithdrawForm() {
             setError("Must Be positive number.");
             setTimeout(() => setError(''), 1500);
         } else {
-            dispatch(newTransfer({ text: -Math.abs(text) }))
+            dispatch(newTransfer({ 
+                text: -Math.abs(text),
+                balance: balance
+             }))
             setSuccess(`Success: Here is your withdraw of $${text}.`)
             setTimeout(() => setSuccess(''), 3000);
             setError(null)

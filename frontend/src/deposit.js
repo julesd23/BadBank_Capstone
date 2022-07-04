@@ -1,15 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { React, useContext, useEffect, useState, useMemo } from 'react'
 import { Card } from './context'
-
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-
 import { newTransfer, getTransfers, reset } from './features/transfers/transferSlice'
 import initialState from './features/transfers/transferSlice'
 import DepositForm from './components/depositForm'
 import TransferItem from './components/transferItem'
-
 import { UserContext } from '.'
 
 function Deposit() {
@@ -45,7 +42,6 @@ function Deposit() {
     });
   }, [transfers])
 
-
   return (
     <div>
       <Card
@@ -58,7 +54,6 @@ function Deposit() {
               <h2 className="balance">Your current balance is: {balance}</h2>
             </section>
             <DepositForm />
-
           </div>
         }
       />

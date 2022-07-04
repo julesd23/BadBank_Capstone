@@ -9,7 +9,7 @@ const initialState = {
     message: '',
 }
 
-// Create new goal
+// Create new transfer
 export const newTransfer = createAsyncThunk('transfers/create', async (transferData, thunkAPI) => {
     try {
         const token = thunkAPI.getState().auth.user.token
@@ -20,7 +20,7 @@ export const newTransfer = createAsyncThunk('transfers/create', async (transferD
     }
 })
 
-// Get user goals
+// Get user transfers
 export const getTransfers = createAsyncThunk('transfers/getAll', async (_, thunkAPI) => {
     try {
         const token = thunkAPI.getState().auth.user.token
