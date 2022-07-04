@@ -97,7 +97,6 @@ function Login() {
                 </div>
 
                 <div className="flex">
-                  {error && <><div style={{ color: 'red' }}>{error}</div></>}
                   <button type="submit" className="button2">Submit</button>
                   <GoogleLogin
                     onSuccess={async credentialResponse => {
@@ -113,9 +112,10 @@ function Login() {
                     onError={() => {
                       console.log('Login Failed');
                     }}
-                  />
+                    />
                 </div>
 
+                    {error && <><br></br><div style={{ color: 'red' }}>{error}</div></>}
               </form>
             </section>
           </div>
