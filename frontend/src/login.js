@@ -112,10 +112,9 @@ function Login() {
                     onError={() => {
                       console.log('Login Failed');
                     }}
-                    />
+                  />
                 </div>
-
-                    {error && <><br></br><div style={{ color: 'red' }}>{error}</div></>}
+                {error && <><br></br><div style={{ color: 'red' }}>{error}</div></>}
               </form>
             </section>
           </div>
