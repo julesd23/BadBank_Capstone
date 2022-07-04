@@ -12,17 +12,17 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('frontend/build'));
-}
 
 app.use('/api/transfers', require('./routes/transferRoutes'))
 app.use('/api/users', require('./routes/userRoutes'))
 
 app.use(errorHandler)
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('frontend/build'));
+}
 
-app.listen(process.env.port, () => 
+app.listen(process.env.PORT, () => 
 console.log(`server started on port ${port}`)
 )
 
