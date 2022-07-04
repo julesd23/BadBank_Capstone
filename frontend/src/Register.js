@@ -1,10 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { React, useState, useEffect } from 'react'
-import { Card, UserContext } from './context'
+import { Card } from './context'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { FaUser } from 'react-icons/fa'
 import { register, reset } from './features/auth/authSlice'
 // import GoogleLogin from 'react-google-login';
 import { GoogleLogin } from '@react-oauth/google';
@@ -13,11 +12,9 @@ import { decodeJwt } from 'jose'
 function Register() {
 
 
-  const clientId = process.env.CLIENT_ID
-  const clientSecret = process.env.CLIENT_SECRET
+
 
   const [error, setError] = useState('')
-  const [show, setShow] = useState(true);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -31,7 +28,7 @@ function Register() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth)
+  const { user, isError, isSuccess, message } = useSelector((state) => state.auth)
 
   useEffect(() => {
     if (isError) {
@@ -94,8 +91,6 @@ function Register() {
   // const responseErrorGoogle = (response) => {
   //   console.log('FAILURE', response)
   // }
-
-  const secretKey = process.env.CLIENT_SECRET
 
 
   return (

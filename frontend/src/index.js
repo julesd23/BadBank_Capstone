@@ -25,7 +25,7 @@ export const UserContext = createContext()
 
 
 
-function Spa() {
+function App() {
 
   const [balance, setBalance] = useState(0)
   const value = {balance, setBalance}
@@ -66,7 +66,9 @@ const root = createRoot(container);
 root.render(
   // <React.StrictMode>
     <Provider store={store}>
-    <Spa />
+    <App />
     </Provider>
   // </React.StrictMode>
 );
+
+module.exports = App;
