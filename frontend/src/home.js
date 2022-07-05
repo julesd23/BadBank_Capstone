@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react'
 import { Card, UserContext } from './context'
-import Bank from './bank.png'
+import Bank from './img/bank.png'
 import WorldClock from './components/worldClock';
 
 function Home() {

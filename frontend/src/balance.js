@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { React, useContext, useEffect, useState, useMemo } from 'react'
-import { Card } from './context'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { getTransfers, reset } from './features/transfers/transferSlice'

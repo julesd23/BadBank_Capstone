@@ -1,7 +1,7 @@
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { React, useState, useEffect } from 'react'
-import { Card, UserContext } from './context'
+import { Card } from './context'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
