@@ -38,9 +38,9 @@ const setTransfer = asyncHandler(async (req, res) => {
     res.status(200).json(transfer)
 })
 
-
-// Get goals
-// GET /api/transfers/:id
+// future use in cancelling transactions ?
+// delete transfers
+// DELETE /api/transfers/:id
 // private
 
 const deleteTransfer = asyncHandler(async (req, res) => {
@@ -50,16 +50,14 @@ const deleteTransfer = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Goal not found')
     }
-
-
-
+    
     // Check for user
     if(!req.user) {
         res.status(401)
         throw new Error('User not found')
     }
 
-    // Make sure logged in user matches the goal user
+    // Make sure logged in user id matches transfer user id
     if(transfer.user.toString() !== req.user.id) {
         res.status(401)
         throw new Error('User not authorized')

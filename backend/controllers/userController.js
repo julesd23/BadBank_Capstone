@@ -73,7 +73,6 @@ const loginUser = asyncHandler(async (req, res) => {
 // GET /api/users/me
 // Private
 const getMe = asyncHandler(async (req, res) => {
-
     res.status(200).json(req.user)
 })
 
