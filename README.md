@@ -15,7 +15,6 @@ This is a simulation banking app that includes the ability to create an account,
 ## Technology Used
 - Bootstrap for styles.
 - React for a JS library and framework.
-- Docker to run the database.
 - Mongodb for a datase.
 - CORS to indicate origins and add a level of security.
 - Express.js to serve all of the static files of the application, to set up routes, and to communicate with the DAL.
